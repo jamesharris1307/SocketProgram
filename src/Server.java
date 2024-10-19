@@ -9,6 +9,9 @@ public class Server
     private ServerSocket server = null;
     private DataInputStream in = null;
 
+    // Variables
+    String serverSide = ("Server: ");
+
     // Constructor with port
     public Server(int port)
     {
@@ -16,12 +19,12 @@ public class Server
         try
         {
             server = new ServerSocket(port);
-            System.out.println("Server started");
+            System.out.println(serverSide + "Server started");
 
-            System.out.println("Waiting for client . . .");
+            System.out.println(serverSide + "Waiting For Client Program to be Launched");
 
             socket = server.accept();
-            System.out.println("Client accepted");
+            System.out.println(serverSide + "Client Program Launched and accepted");
 
             // Takes input from the client socket
             in = new DataInputStream(
@@ -30,7 +33,7 @@ public class Server
             String line = "";
 
             // Reads message from client until "Over" is sent
-            while (!line.equals("Over"))
+            while (!line.equals("Terminate"))
             {
                 try
                 {
@@ -40,7 +43,7 @@ public class Server
                     System.out.println(i);
                 }
             }
-            System.out.println("Closing Connection");
+            System.out.println(serverSide + "Connection Terminated");
 
             // Close Connection
             socket.close();

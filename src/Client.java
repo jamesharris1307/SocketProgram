@@ -9,13 +9,16 @@ public class Client {
     private DataInputStream input = null;
     private DataOutputStream out = null;
 
+    // Variables
+    String clientSide = ("Client: ");
+
     // Constructor to put ip address and port
     public Client(String address, int port)
     {
         // Establish Connection
         try {
             socket = new Socket(address, port);
-            System.out.println("Connected");
+            System.out.println(". . . Connection Established . . .");
 
             // Takes input from terminal
             input = new DataInputStream(System.in);
@@ -36,8 +39,8 @@ public class Client {
         // String to read message from input
         String line = "";
 
-        // Keep reading until "Over" is input
-        while (!line.equals("Over")) {
+        // Keep reading until "Terminate" is input
+        while (!line.equals("Terminate")) {
         try {
             line = input.readLine();
             out.writeUTF(line);
