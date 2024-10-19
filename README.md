@@ -4,6 +4,7 @@ Following an article by GeeksForGeeks this project utilises socket programming t
 Server and Client classes can be found in the SRC folder.
 
 To run the program run both the client and server classes simultaneously and type on the client terminal.
+
 Author - James Harris.
 
 Credit to GeekforGeeks and Souradeep Barua for the code.
