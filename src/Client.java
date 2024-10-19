@@ -37,7 +37,7 @@ public class Client {
         }
 
         // String to read message from input
-        String line = "";
+        String line =" ";
 
         // Keep reading until "Terminate" is input
         while (!line.equals("Terminate")) {
